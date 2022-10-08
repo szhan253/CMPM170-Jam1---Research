@@ -1,0 +1,43 @@
+=== Scene_2 ===
++ "Open Your Eyes" 
+- ->scene2_start
+
+== scene2_start
+- I look around to figure out where I am this time. There is some water falling down on my face. I am in a forest! There are all kinds of insects moving around me.
+
+{Scene_1 && scene2_visited == 1: It seems like I have been here before. There is a black hole suddenly appears under me and I drop in there while thinking. -> MainLoop}
+
+- "Ding~~ There is a task assigned to you."
+
+- "Why is there someone speaking in my mind?"
+
+- While thinking, there is a screen pops in front of me.
+
++ [Check the screen]
+
+- {items_get ? Bottle:
+        "You need to use the bottle to collect samples for research. 
+
+    - else:
+        "The critical information is missing. Please try to find the task on your trip.
+        
+  }
+- You can check your bag to see what else you can use. Have a nice trip in the forest. Good Luck!"
+
+- The system doesn't give me time to think. It closed by itself after it read all the words. I am still confused, but it seems like there is nothing else to do except follow the rules.
+
++ [Walk Follow the Trail]
+
+- There is a golden dragonfly almost hit me.
+
++ {items_get !? Fly}[Catch the Dragonfly] -> catch_fly
++ [Let the Dragonfly Go] -> scene2_end
+
+== catch_fly
+    ~ items_get += (Fly)
+-> scene2_end
+
+== scene2_end
+    ~ scene2_visited = 1
+- The world suddenly twists.
+-> MainLoop

@@ -1,0 +1,43 @@
+=== Scene_1 ===
++ "Open Your Eyes"
+
+- I am in a white room. Look around the room. There is no other color. There is even no shadow in the room. It is pretty hard to tell where is the edge of the room. The only thing you can see is white color. 
+
+* {not Scene_2}[Walk Around] -> walk
+* [Look Down] -> black_hole
+
+== walk
+- It is so uncomfortable when looking in a white room for a long time. I closed my eyes and tried to rest. However, when I open my eyes, the scene changed again.
+
+->scene2_start
+
+== black_hole
+There is a black hole suddenly appears under you. "Why can I still step on the floor instead of falling into the hole? Where am I?"
+
+* [Try to Move]
+
+- The hole is moving with me. I try to move a few more steps. The hole is still under me like my shadow. However, there is no source of light that can cause any shadow.
+
+- {items_get ? Fly: I searched in all my pockets to see if there is anything I can use to help me figure out what I need to do in the room. There is a key in my pocket! "But I did not find a key before. Where it comes from?" I ask myself, "The golden dragonfly! Is that actually a golden key?! Should I try to find somewhere to use the key?" }
+
+* [Look Forward Again]
+
+- Instead of only white color, there is some light appearing at the end of the sky. The place you are in has a shape now because of the lighting. 
+
+* [Follow the Light]
+
+- When I walk near the source of light, there is a dark point showing at the end of the sky. As you walk future, there is a forest showing up. The ground that you are stepping on is also turning green. Finally, white and black are not the only two colors in the world. There is some grass spread on the ground like some green stars in the light green sky. {Scene_2: Am I going to go back to the forest again?}
+
+* [Continue walking]
+
+- You step on something. You look down to check what stop you from going to the forest. There is a bottle.
+     ~ items_get += (Bottle)
+     
+* [Open the Bottle]
+
+- The world twist again. 
+    -> MainLoop
+
+
+
+

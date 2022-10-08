@@ -1,0 +1,19 @@
+=== Scene_4 ===
++ "Open Your Eyes"
+
+- I wake up in a small room near the ocean. I slept on the chair and faced a shelf.
+
+- { not Scene_1 && not Scene_2 && not Scene_3: 
+        There are some bottles containing some liquid. It seems like there the bottles are used to store some other items. However, where those things are? Why are they on my shelf?
+
+    - else:
+        There are some bottles on the shelf. The items I get from previous places are stored there. {not Scene_1 || not Scene_2 || not Scene_3: However, there are still {3 - LIST_COUNT(items_get)} empty bottle. What is missing?} 
+    } 
+    
+- {Scene_1 && Scene_2 && Scene_3 && Scene_4: 
+    "It seems like just a dream. How can I move between different places that fast and pretty randomly? However, all items I collected are really on my shelf." I fall asleep again while thinking. ->END 
+  }
+    
+- Suddenly, there is a black hole appears under me and I drop into there.
+    
+-> MainLoop

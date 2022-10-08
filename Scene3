@@ -1,0 +1,27 @@
+=== Scene_3 ===
++ "Open Your Eyes"
+
+- I am in a desert this time. It seems like the area I am in is not super dry since there are still some desert plants around me. 
+
+- I try to stand up and clean my clothes. 
+
+- {items_get ? Fly: 
+        There is something hard in my pocket. I take it out to check what is that. There is a golden key in my hand!
+   }
+
+- {items_get ? Bottle:
+    I am not sure if there is going to be easy for finding water. I need to make sure I can survive in the desert. Thus, I'd better use a container to get some water with me. The bottle is still empty and there are some plants. Why not just get some water from those desert plants?
+    }
+    
++ Get Water from Surrounding Plants -> water
++ However, I have no idea whether those plants are eatable and do not want to kill the plants. So I decided to try to search for water around. -> no_water
+
+== water
+    ~  items_get += (Plants)
+- I drink a little liquid I got from the plants. However, the plants are poisonous plants. I lost all feeling.
+-> MainLoop
+
+
+== no_water
+- There is no water around. Sun shines on the ground and it is so hot. I lost all feelings because of dehydration.
+-> MainLoop
